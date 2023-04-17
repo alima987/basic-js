@@ -16,10 +16,9 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function calculateHanoi(disksNumber, turnsSpeed) {
    let numTurns = 2 ** disksNumber - 1;
-   let timeTurns = Math.floor(numTurns * 3600 / turnsSpeed);
   let numbers = {
    turns: numTurns,
-   seconds: timeTurns,
+   seconds: Math.floor(numTurns * 3600 / turnsSpeed)
   }
   return numbers
  }

@@ -18,22 +18,31 @@ if (date === undefined) {
       throw new Error ('Invalid date!')
     } try {
       date.toLocaleString()
-    } catch(err) {
-      if(err) {
-        err = 'Invalid date!'
+    } catch(error) {
+      if(error) {
+        error = 'Invalid date!'
       throw new Error ('Invalid date!')
       }
     }
-    let month = date.getMonth();
-    if (month == 11 || month <= 1) {
-    return 'winter'}
-    else if (month <= 4) {
-       return 'spring'}
-    else if (month <= 7) {
-     return 'summer'}
-    else 
-    {return 'autumn'}
-}
+    switch (date.getMonth()) {
+      case 0:
+      case 1:
+      case 11:
+        return 'winter';
+      case 2:
+      case 3:
+      case 4:
+        return 'spring';
+      case 5:
+      case 6:
+      case 7:
+        return 'summer';
+      case 8:
+      case 9:
+      case 10:
+        return 'autumn';
+    }
+  }
 
 module.exports = {
   getSeason

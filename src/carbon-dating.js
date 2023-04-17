@@ -21,10 +21,10 @@ function dateSample(sampleActivity) {
   if(arguments.length === 0 || typeof sampleActivity !== 'string') {
     return false;
   }
-  sampleActivity = +sampleActivity;
-  if (sampleActivity <= 0 || sampleActivity >= 15) {
+  let sample = +sampleActivity;
+  if (sample <= 0 || sample >= 15) {
     return false;
-  } if (isNaN(sampleActivity)) {
+  } if (isNaN(sample)) {
     return false;
   }
   let rate = 0.693 / HALF_LIFE_PERIOD;
